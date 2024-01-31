@@ -72,6 +72,11 @@ body {
     box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
 
+.hint.reload {
+    margin-top: 10px;
+    margin-left: 46%;
+}
+
 .field {
     margin: 4% 33%;
     padding: 2% 2%;
