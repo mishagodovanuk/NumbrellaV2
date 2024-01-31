@@ -10,9 +10,34 @@
     <div class="header">
         <img class="logo" src="assets/image/parasol.png" alt="Numbrella">
         <span class="progress">Progress: <b id="counter">0</b>%</span>
-        <button class="hint">Hint</button>
+        <button class="hint" onclick="showPopup()">
+            <img width="32" src="assets/image/hint.png" alt="">
+            Hint
+        </button>
     </div>
     <div id="field" class="field"></div>
+    <!-- Popup container -->
+    <div id="popup" class="popup">
+        <p>
+            Rules:
+            Main object of the game is kick all numbers with the same values
+            by clicking on them.
+            Only nine numbers must left from 1 to 9 in any place on the field.
+            <br>
+            Two numbers can be kicked only if:
+            <ol>
+                <li>their values is the same</li>
+                <li>numbers in the same column or row</li>
+                <li>you can click on two numbers also if there is other numbers between them</li>
+                <li>If there is numbers between, they can be kicked only if all other numbers between was kicked</li>
+            </ol>
+        </p>
+        <button class="hint" onclick="hidePopup()">Close</button>
+    </div>
+
+    <!-- Overlay background -->
+    <div id="overlay" class="overlay"></div>
     <script src="assets/js/numbrella.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
