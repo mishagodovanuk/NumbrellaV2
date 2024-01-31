@@ -30,6 +30,7 @@ var progress = 0;
  */
 initField();
 
+//TODO anon function.
 /**
  * Init function.
  *
@@ -53,7 +54,8 @@ function initField() {
          }
     })
 }
-
+//TODO one function add class
+//TODO one event for all buttons
 /**
  * Create cell.
  *
@@ -91,6 +93,8 @@ function clickCell(elem) {
     compare(elem) ? compareSuccess(firstC, elem) : compareFail(firstC, elem);
 }
 
+//TODO add data attribute
+// TODO abstract checks
 /**
  * Compare.
  *
@@ -105,11 +109,11 @@ function compare(elem) {
     var firstVal = firstC.innerHTML;
     var secondVal = elem.innerHTML;
 
-    if (first[0] === second[0] && firstVal === secondVal) {
+    if (first[0] === second[0] && firstVal === secondVal && !sameElem(elem)) {
         return checkRow(first[0], first[first.length - 1], second[second.length - 1]);
     }
 
-    if (first[first.length - 1] === second[second.length - 1] && firstVal === secondVal) {
+    if (first[first.length - 1] === second[second.length - 1] && firstVal === secondVal && !sameElem(elem)) {
         return checkColumn(first[first.length - 1], first[0], second[0]);
     }
 
@@ -174,7 +178,6 @@ function checkRow(rowId, first, second) {
     min++;
 
     for(var i = min; i < max; i++) {
-        console.log(document.getElementById(rowId + ":" + i));
         if (document.getElementById(rowId + ":" + i).classList.contains("active")) {
             return false;
         }
@@ -183,6 +186,8 @@ function checkRow(rowId, first, second) {
     return true;
 }
 
+//TODO abstract foreach.
+//TODO add has active class function
 /**
  * Check values in column.
  *
@@ -211,6 +216,16 @@ function checkColumn(colId, first, second) {
     }
 
     return true;
+}
+
+/**
+ * Check if same element.
+ *
+ * @param elem
+ * @return {boolean}
+ */
+function sameElem(elem) {
+    return firstC.id === elem.id;
 }
 
 /**
