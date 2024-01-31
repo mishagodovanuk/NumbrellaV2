@@ -2,7 +2,10 @@
     min-height: 25px;
     background-color: #1CB0F6;
     padding: 10px 10px;
-    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.1)
+    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 body {
@@ -45,12 +48,29 @@ body {
     margin-right: 15px;
 }
 
-.progress {
-    text-align: center;
-    margin-left: 36%;
-    margin-right: 36%;
-    font-family: 'Impact', sans-serif;
-    font-size: 20px;
+#progress {
+    width: 300px;
+    height: 20px;
+    border: 1px solid #ccc;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+#progress-container {
+    display: flex;
+    align-items: center;
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: red;
+    width: 0;
+    transition: width 0.3s ease-in-out;
+    border-radius: 8px;
+    z-index: 3;
+    margin-top: -17px;
 }
 
 .hint:focus:not(:focus-visible):not(.focus-visible) {
