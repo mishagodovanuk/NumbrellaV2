@@ -27,7 +27,7 @@ class NumbrellaGame {
             this.fieldAddChild(cell);
 
             if (!(index % this.lineLimit)) {
-                this.fieldAddChild(document.createElement("br"));
+                this.fieldAddChild(this.getSeparator());
             }
         });
     }
@@ -226,6 +226,15 @@ class NumbrellaGame {
     }
 
     /**
+     * Create separator.
+     *
+     * @return {HTMLBRElement}
+     */
+    getSeparator() {
+        return document.createElement("br");
+    }
+
+    /**
      * Calculate progress.
      */
     updateProgress() {
@@ -272,4 +281,4 @@ class NumbrellaGame {
  *
  * @type {NumbrellaGame}
  */
-const sudokuGame = new NumbrellaGame();
+const numbrellaGame = new NumbrellaGame();
